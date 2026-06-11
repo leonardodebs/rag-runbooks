@@ -1,4 +1,5 @@
-# projeto3-rag-runbooks 🔎🤖
+# RAG Runbooks 🔎🤖
+## Busca semântica + Claude para responder dúvidas de infraestrutura
 
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
@@ -110,7 +111,7 @@ Pergunta → Embed da query → Busca FAISS (top-K) → Recupera chunks
 ## 📁 Estrutura do projeto
 
 ```
-projeto3-rag-runbooks/
+rag-runbooks/
 ├── data/
 │   ├── runbooks/         # 8 runbooks em PT-BR (.md)
 │   └── index/            # índice gerado (gitignored)
