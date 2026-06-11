@@ -2,7 +2,6 @@
 
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
-![Tests](https://img.shields.io/badge/tests-20%20passing-brightgreen)
 ![FastAPI](https://img.shields.io/badge/FastAPI-API%20REST-009688?logo=fastapi&logoColor=white)
 ![Claude](https://img.shields.io/badge/LLM-claude--haiku--4--5-c96442)
 
