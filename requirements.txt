@@ -1,0 +1,22 @@
+# Sistema RAG de runbooks — dependências (Python 3.12)
+
+# LLM — geração das respostas
+anthropic>=0.40.0
+
+# Embeddings locais (gratuitos, sem API) + busca vetorial
+sentence-transformers>=3.0.0
+faiss-cpu>=1.8.0
+
+# API REST
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+
+# CLI e saída colorida
+rich>=13.7.0
+
+# Configuração via .env
+python-dotenv>=1.0.0
+
+# Testes
+pytest>=8.0.0
+httpx>=0.27.0   # usado pelo TestClient do FastAPI

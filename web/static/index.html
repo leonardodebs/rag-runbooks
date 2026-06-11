@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAG Runbooks — Assistente de Plantão</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Barra lateral: status do índice e runbooks indexados -->
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="logo">🔎</span>
+        <span>RAG Runbooks</span>
+      </div>
+
+      <div class="status-card" id="status-card">
+        <div class="status-row">
+          <span class="status-dot" id="status-dot"></span>
+          <span id="status-text">Verificando índice…</span>
+        </div>
+        <div class="status-meta" id="status-meta"></div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Runbooks indexados</h3>
+        <ul class="runbook-list" id="runbook-list">
+          <li class="muted">Carregando…</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <span id="model-tag" class="muted"></span>
+        <a href="/docs" target="_blank" rel="noopener">API docs ↗</a>
+      </div>
+    </aside>
+
+    <!-- Área principal: pergunta + resposta -->
+    <main class="main">
+      <header class="main-header">
+        <h1>Assistente de Plantão</h1>
+        <p class="subtitle">
+          Pergunte sobre os runbooks de infraestrutura. As respostas são geradas
+          pela Claude com base apenas nos documentos indexados — sempre com as
+          fontes citadas.
+        </p>
+      </header>
+
+      <!-- Sugestões de perguntas -->
+      <div class="suggestions" id="suggestions">
+        <button class="chip-suggestion">Como faço rollback de um serviço ECS?</button>
+        <button class="chip-suggestion">Como resolver erro 502 no ALB?</button>
+        <button class="chip-suggestion">Quais os passos para investigar um spike de custo?</button>
+        <button class="chip-suggestion">Como executar um failover manual no RDS?</button>
+      </div>
+
+      <!-- Resultado -->
+      <section class="result" id="result" hidden>
+        <div class="answer-card">
+          <div class="answer-header">
+            <span class="answer-badge">Resposta</span>
+            <span class="answer-meta" id="answer-meta"></span>
+          </div>
+          <div class="answer-body" id="answer-body"></div>
+          <div class="sources" id="sources"></div>
+        </div>
+      </section>
+
+      <!-- Estado de carregamento -->
+      <section class="loading" id="loading" hidden>
+        <div class="spinner"></div>
+        <span>Buscando nos runbooks e consultando a Claude…</span>
+      </section>
+
+      <!-- Estado de erro -->
+      <section class="error-box" id="error-box" hidden></section>
+
+      <!-- Caixa de pergunta (fixa embaixo) -->
+      <form class="composer" id="composer">
+        <div class="composer-row">
+          <input
+            type="text"
+            id="question"
+            placeholder="Digite sua pergunta técnica…"
+            autocomplete="off"
+            required
+          />
+          <label class="topk">
+            top-k
+            <select id="top-k">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3" selected>3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </label>
+          <button type="submit" id="send-btn">Perguntar</button>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

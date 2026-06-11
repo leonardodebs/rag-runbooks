@@ -1,0 +1,20 @@
+# Índice gerado (reconstruído com `make index`)
+data/index/
+
+# Segredos
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# Cache de modelos do sentence-transformers / huggingface
+.cache/
+
+# Editores
+.vscode/
+.idea/
