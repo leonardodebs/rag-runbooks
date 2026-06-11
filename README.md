@@ -1,5 +1,11 @@
 # projeto3-rag-runbooks 🔎🤖
 
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Tests](https://img.shields.io/badge/tests-20%20passing-brightgreen)
+![FastAPI](https://img.shields.io/badge/FastAPI-API%20REST-009688?logo=fastapi&logoColor=white)
+![Claude](https://img.shields.io/badge/LLM-claude--haiku--4--5-c96442)
+
 Sistema **RAG (Retrieval-Augmented Generation)** que indexa runbooks de
 infraestrutura AWS e responde perguntas técnicas em português, **citando as
 fontes**. Projeto capstone da Fase 1.
@@ -124,6 +130,7 @@ projeto3-rag-runbooks/
 ├── requirements.txt
 ├── Makefile
 ├── .env.example
+├── LICENSE
 └── README.md
 ```
 
@@ -351,3 +358,9 @@ flowchart TB
 - Python 3.12
 - Uma `ANTHROPIC_API_KEY` (apenas para gerar respostas; indexação e testes não precisam)
 - ~500 MB para os modelos de embeddings na primeira execução
+
+---
+
+## 📄 Licença
+
+Distribuído sob a licença **MIT** — veja [LICENSE](LICENSE) para os termos completos.
